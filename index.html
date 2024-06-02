@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <h1>Image Gallery website</h1>
+    </div>
+    
+    <form >
+        <label for="file-input">Upload Image</label>
+    <input type="file" id="file-input" multiple>
+    <button id="submit-button">Submit</button>
+</form>
+    <div class="gallery" id="gallery">
+        <div class="gallery-item">
+            <img src="./image/forest.jpg" alt="Forest image" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="./image/hotel2.jpg" alt="Hotel Image " class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="./image/house.jpg" alt="Home Image 2" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="./image/house2.jpg" alt="Home Image 3" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="./image/beache.jpg" alt="Beach Image" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="./image/mountain.jpg" alt="Mountain Image 3" class="gallery-image">
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
