@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     submitButton.addEventListener('click', () => {
+        if(fileInput.value == ""){
+            alert("Please select an image")
+        }else{
+           console.log("Image uploaded")
+        }
         for (const file of selectedFiles) {
             const reader = new FileReader();
             reader.onload = (e) => {
@@ -45,22 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 images.push(img);
                 saveImageToLocalStorage(img.src, img.alt);
+
             };
             reader.readAsDataURL(file);
+            function showMessage() {
+                Swal.fire({
+                  title: "Upload",
+                  text: "Image Upload successfully",
+                  icon: "success"
+                });
+              }
+              
+              setTimeout(showMessage(), 5000);
         }
-        
         fileInput.value = '';
-        function showMessage() {
-            Swal.fire({
-              title: "The Internet?",
-              text: "That thing is still around?",
-              icon: "success"
-            });
-          }
-          
-          setInterval(showMessage, 5000);
-          
+        
     });
+    
+      
 
     function createGalleryItem(img) {
         const galleryItem = document.createElement('div');
